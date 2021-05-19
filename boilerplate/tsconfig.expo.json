@@ -1,0 +1,8 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "lib": [
+      "esnext", "dom", "es6", "es2016.array.include", "es2017.object"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { DevSettings } from "react-native"
+// import { DevSettings } from "react-native"
 import { loadString, saveString } from "../app/utils/storage"
 
 /**
@@ -24,18 +24,18 @@ export function ToggleStorybook(props) {
         setShowStorybook(storedSetting === "on")
 
         // Add our toggle command to the menu
-        DevSettings.addMenuItem("Toggle Storybook", () => {
-          setShowStorybook((show) => {
-            // On toggle, flip the current value
-            show = !show
+        // DevSettings.addMenuItem("Toggle Storybook", () => {
+        //   setShowStorybook((show) => {
+        //     // On toggle, flip the current value
+        //     show = !show
 
-            // Write it back to storage
-            saveString("devStorybook", show ? "on" : "off")
+        //     // Write it back to storage
+        //     saveString("devStorybook", show ? "on" : "off")
 
-            // Return it to change the local state
-            return show
-          })
-        })
+        //     // Return it to change the local state
+        //     return show
+        //   })
+        // })
 
         // Load the storybook UI once
         setStorybookUIRoot(() => require("./storybook").StorybookUIRoot)

@@ -53,6 +53,8 @@ const TAGLINE: TextStyle = {
 const IGNITE: ImageStyle = {
   marginVertical: spacing[6],
   alignSelf: "center",
+  width: 180,
+  height: 100,
 }
 const LOVE_WRAPPER: ViewStyle = {
   flexDirection: "row",

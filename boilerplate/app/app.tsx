@@ -25,6 +25,7 @@ import {
 } from "./navigators"
 import { RootStore, RootStoreProvider, setupRootStore } from "./models"
 import { ToggleStorybook } from "../storybook/toggle-storybook"
+import { useAssets } from "./utils/useAssets"
 
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
@@ -40,6 +41,7 @@ export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 function App() {
   const navigationRef = useRef<NavigationContainerRef>()
   const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined)
+  const assets = useAssets()
 
   setRootNavigation(navigationRef)
   useBackButtonHandler(navigationRef, canExit)
@@ -63,7 +65,7 @@ function App() {
   if (!rootStore) return null
 
   // otherwise, we're ready to render the app
-  return (
+  return assets ? (
     <ToggleStorybook>
       <RootStoreProvider value={rootStore}>
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
@@ -75,7 +77,7 @@ function App() {
         </SafeAreaProvider>
       </RootStoreProvider>
     </ToggleStorybook>
-  )
+  ) : <></>
 }
 
 export default App

@@ -42,6 +42,11 @@ Run the CLI:
 npx ignite-cli new PizzaApp
 # or for Expo-powered:
 npx ignite-cli new PizzaApp --expo
+# if you've already installed expo or react-native CLIs globally with
+# npm install -g expo-cli / npm install –g react-native-cli
+# This will always be faster than using npx.
+npx ignite-cli new PizzaApp --use-global
+npx ignite-cli new PizzaApp --expo --use-global
 ```
 
 Ignite will walk you through the rest. If you'd like to follow a tutorial, check out [this one from Robin Heinze](https://shift.infinite.red/creating-a-trivia-app-with-ignite-bowser-part-1-1987cc6e93a1).
